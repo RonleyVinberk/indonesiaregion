@@ -78,7 +78,6 @@ use app\models\Subdistricts;
         }
     ?>
     
-
     <div class="form-group">
         <!-- start form-group -->
 

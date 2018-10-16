@@ -7,7 +7,7 @@ use kartik\detail\DetailView;
 /* @var $this yii\web\View */
 /* @var $model app\models\DepDrops */
 
-$this->title = $model->id;
+$this->title = $model->provinces->name;
 $this->params['breadcrumbs'][] = ['label' => 'Dep Drops', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -81,22 +81,19 @@ $this->params['breadcrumbs'][] = $this->title;
                     [
                         'attribute' => 'created_by',
                         'value' => isset($user_created_by) ? $user_created_by->full_name : '-',
-                        'labelColOptions' => ['style'=>'width: 30%; text-align: right;']
+                        'labelColOptions' => ['style'=>'width: 50%; text-align: right;']
                     ],
                     [
                         'attribute' => 'created_on',
                         'format' => ['date', 'php: d-M-Y H:i:s'],
-                        'labelColOptions' => ['style'=>'width: 30%; text-align: right;']
                     ],
                     [
                         'attribute' => 'modified_by',
                         'value' => isset($user_modified_by) ? $user_modified_by->full_name : '-',
-                        'labelColOptions' => ['style'=>'width: 30%; text-align: right;']
                     ],
                     [
                         'attribute' => 'modified_on',
                         'format' => ['date', 'php: d-M-Y H:i:s'],
-                        'labelColOptions' => ['style'=>'width: 30%; text-align: right;']
                     ]
                 ],
             ]) ?>

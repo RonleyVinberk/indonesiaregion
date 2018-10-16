@@ -12,6 +12,10 @@ use Yii;
  * @property int $subdistricts_id
  * @property int $districts_id
  * @property int $provinces_id
+ * @property int $created_on
+ * @property int $created_by
+ * @property int $modified_on
+ * @property int $modified_by
  *
  * @property Districts $districts
  * @property Provinces $provinces
@@ -34,7 +38,7 @@ class Depdrops extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['villages_id', 'subdistricts_id', 'districts_id', 'provinces_id'], 'integer'],
+            [['villages_id', 'subdistricts_id', 'districts_id', 'provinces_id', 'created_on', 'created_by', 'modified_on', 'modified_by'], 'integer'],
             [['districts_id'], 'exist', 'skipOnError' => true, 'targetClass' => Districts::className(), 'targetAttribute' => ['districts_id' => 'id']],
             [['provinces_id'], 'exist', 'skipOnError' => true, 'targetClass' => Provinces::className(), 'targetAttribute' => ['provinces_id' => 'id']],
             [['subdistricts_id'], 'exist', 'skipOnError' => true, 'targetClass' => Subdistricts::className(), 'targetAttribute' => ['subdistricts_id' => 'id']],
@@ -53,6 +57,10 @@ class Depdrops extends \yii\db\ActiveRecord
             'subdistricts_id' => 'Subdistricts ID',
             'districts_id' => 'Districts ID',
             'provinces_id' => 'Provinces ID',
+            'created_on' => 'Created On',
+            'created_by' => 'Created By',
+            'modified_on' => 'Modified On',
+            'modified_by' => 'Modified By',
         ];
     }
 

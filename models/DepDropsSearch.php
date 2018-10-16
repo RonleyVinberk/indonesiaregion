@@ -18,7 +18,7 @@ class DepDropsSearch extends DepDrops
     public function rules()
     {
         return [
-            [['id', 'villages_id', 'subdistricts_id', 'districts_id', 'provinces_id'], 'integer'],
+            [['id', 'villages_id', 'subdistricts_id', 'districts_id', 'provinces_id', 'created_on', 'created_by', 'modified_on', 'modified_by'], 'integer'],
         ];
     }
 
@@ -63,6 +63,10 @@ class DepDropsSearch extends DepDrops
             'subdistricts_id' => $this->subdistricts_id,
             'districts_id' => $this->districts_id,
             'provinces_id' => $this->provinces_id,
+            'created_on' => $this->created_on,
+            'created_by' => $this->created_by,
+            'modified_on' => $this->modified_on,
+            'modified_by' => $this->modified_by,
         ]);
 
         return $dataProvider;

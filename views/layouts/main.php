@@ -39,7 +39,7 @@ AppAsset::register($this);
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
             ['label' => 'Home', 'url' => ['/site/index']],
-            ['label' => 'Villages', 'url' => ['/village/index']],
+            ['label' => 'Villages', 'url' => ['/villages/index']],
             ['label' => 'Subdistricts', 'url' => ['/subdistrict/index']],
             ['label' => 'Districts', 'url' => ['/district/index']],
             ['label' => 'Provinces', 'url' => ['/province/index']],

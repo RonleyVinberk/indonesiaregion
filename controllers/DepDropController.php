@@ -132,17 +132,17 @@ class DepDropController extends Controller
     // Dependent Dropdown for List District
     public function actionListsDist($id){
         if ($id != '') {
-            $countVill = Districts::find()->where(['province_id' => $id])->count();
-            $posDs = Districts::find()->where(['province_id' => $id])->all();
+            $countDist = Districts::find()->where(['province_id' => $id])->count();
+            $posD = Districts::find()->where(['province_id' => $id])->all();
         } else {
-            $countVill = Districts::find()->where(['province_id' => 0])->count();
-            $posDs = Districts::find()->where(['province_id' => 0])->all();
+            $countDist = Districts::find()->where(['province_id' => 0])->count();
+            $posD = Districts::find()->where(['province_id' => 0])->all();
         }
         
-        if($countVill > 0) {
+        if($countDist > 0) {
             echo "<option value='0'>Choose...</option>";
-            foreach ($posDs as $poDs) {
-                echo "<option value='" .$poDs->id. "'>".$poDs->name."</option>";
+            foreach ($posD as $poD) {
+                echo "<option value='" .$poD->id. "'>".$poD->name."</option>";
             }
         } else {
             echo "<option value='0'>Choose...</option>";
@@ -152,17 +152,17 @@ class DepDropController extends Controller
     // Dependent Dropdown for List Subdistrict
     public function actionListsSubdist($id){
         if ($id != '') {
-            $countVill = Subdistricts::find()->where(['district_id' => $id])->count();
-            $posDs = Subdistricts::find()->where(['district_id' => $id])->all();
+            $countSubDist = Subdistricts::find()->where(['district_id' => $id])->count();
+            $posSd = Subdistricts::find()->where(['district_id' => $id])->all();
         } else {
-            $countVill = Subdistricts::find()->where(['district_id' => 0])->count();
-            $posDs = Subdistricts::find()->where(['district_id' => 0])->all();
+            $countSubDist = Subdistricts::find()->where(['district_id' => 0])->count();
+            $posSd = Subdistricts::find()->where(['district_id' => 0])->all();
         }
         
-        if($countVill > 0) {
+        if($countSubDist > 0) {
             echo "<option value='0'>Choose...</option>";
-            foreach ($posDs as $poDs) {
-                echo "<option value='" .$poDs->id. "'>".$poDs->name."</option>";
+            foreach ($posSd as $poSd) {
+                echo "<option value='" .$poSd->id. "'>".$poSd->name."</option>";
             }
         } else {
             echo "<option value='0'>Choose...</option>";
@@ -173,16 +173,16 @@ class DepDropController extends Controller
     public function actionListsVill($id){
         if ($id != '') {
             $countVill = Villages::find()->where(['subdistrict_id' => $id])->count();
-            $posDs = Villages::find()->where(['subdistrict_id' => $id])->all();
+            $posVl = Villages::find()->where(['subdistrict_id' => $id])->all();
         } else {
             $countVill = Villages::find()->where(['subdistrict_id' => 0])->count();
-            $posDs = Villages::find()->where(['subdistrict_id' => 0])->all();
+            $posVl = Villages::find()->where(['subdistrict_id' => 0])->all();
         }
         
         if($countVill > 0) {
             echo "<option value='0'>Choose...</option>";
-            foreach ($posDs as $poDs) {
-                echo "<option value='" .$poDs->id. "'>".$poDs->name."</option>";
+            foreach ($posVl as $poVl) {
+                echo "<option value='" .$poVl->id. "'>".$poVl->name."</option>";
             }
         } else {
             echo "<option value='0'>Choose...</option>";
